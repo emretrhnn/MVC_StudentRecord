@@ -1,0 +1,53 @@
+﻿@model StudentRecord.Entities.StudentTable
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="StudentId" />
+            <div class="form-group">
+                <label asp-for="StudentName" class="control-label"></label>
+                <input asp-for="StudentName" class="form-control" placeholder="Adı Yazın" required="" />
+                <span asp-validation-for="StudentName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentSurname" class="control-label"></label>
+                <input asp-for="StudentSurname" class="form-control" placeholder="Soyadı Yazın" required="" />
+                <span asp-validation-for="StudentSurname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentMail" class="control-label"></label>
+                <input asp-for="StudentMail" class="form-control" placeholder="Mail Adresini Yazın" required="" />
+                <span asp-validation-for="StudentMail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentImage" class="control-label"></label>
+                <input asp-for="StudentImage" class="form-control" placeholder="Fotoğraf Link Adresi" />
+                <span asp-validation-for="StudentImage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentAddress" class="control-label"></label>
+                <input asp-for="StudentAddress" class="form-control" placeholder="Adresi Yazın" required="" />
+                <span asp-validation-for="StudentAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-info" style="margin-top:30px" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
